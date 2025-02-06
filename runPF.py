@@ -161,7 +161,7 @@ def run_Power_Flow(ppc, active_nodes, active_ESS, active_power,reactive_power,ac
 dmuObj = dmu()
 
 ''' Start mqtt client '''
-mqttObj = mqttClient("mqtt", dmuObj)
+#mqttObj = mqttClient("mqtt", dmuObj)
 
 httpSrvThread2 = threading.Thread(name='httpSrv',target=httpSrv, args=("0.0.0.0", int(ext_port) ,dmuObj,))
 httpSrvThread2.start()
@@ -224,21 +224,21 @@ dmuObj.addElmMonitor(api_cntr_input, "nodes", "data_nodes")
 
 # Receive active power control
 dmuObj.addElm("active_power", simDict)
-mqttObj.attachSubscriber("/voltage_control/control/active_power", "json","active_power_control_dict")
+#mqttObj.attachSubscriber("/voltage_control/control/active_power", "json","active_power_control_dict")
 # Receive reactive power control
 dmuObj.addElm("reactive_power", simDict)
-mqttObj.attachSubscriber("/voltage_control/control/reactive_power", "json","reactive_power_control_dict")
+#mqttObj.attachSubscriber("/voltage_control/control/reactive_power", "json","reactive_power_control_dict")
 # Receive active power ESS control
 dmuObj.addElm("active_power_ESS", simDict)
-mqttObj.attachSubscriber("/voltage_control/control/active_power_ESS", "json","active_power_ESS_control_dict")
+#mqttObj.attachSubscriber("/voltage_control/control/active_power_ESS", "json","active_power_ESS_control_dict")
 
 ########################################################################################################
 #########################  Section for Sending Signal  #################################################
 ########################################################################################################
 
-mqttObj.attachPublisher("/voltage_control/measuremnts/voltage","json","voltage_dict")
-mqttObj.attachPublisher("/voltage_control/measuremnts/pv","json","pv_input_dict")
-mqttObj.attachPublisher("measurements","json","measurements")
+#mqttObj.attachPublisher("/voltage_control/measuremnts/voltage","json","voltage_dict")
+#mqttObj.attachPublisher("/voltage_control/measuremnts/pv","json","pv_input_dict")
+#mqttObj.attachPublisher("measurements","json","measurements")
 
 # read profiles from CSV files
 # =======================================================================
