@@ -403,42 +403,42 @@ try:
 except (KeyboardInterrupt, SystemExit):
 
     rows = voltage_tot
-    with open('powerflow/csv_files/voltage.csv', 'w+', encoding="ISO-8859-1", newline='') as csv_file:
+    with open('csv_files/voltage.csv', 'w+', encoding="ISO-8859-1", newline='') as csv_file:
         wr = csv.writer(csv_file)
         for row in rows:
             wr.writerow(row)
     csv_file.close()
 
     rows = active_power_pv_tot
-    with open('powerflow/csv_files/active_power_pv_tot.csv', 'w+', encoding="ISO-8859-1", newline='') as csv_file:
+    with open('csv_files/active_power_pv_tot.csv', 'w+', encoding="ISO-8859-1", newline='') as csv_file:
         wr = csv.writer(csv_file)
         for row in rows:
             wr.writerow(row)
     csv_file.close()
 
     rows = reactive_power_pv_tot
-    with open('powerflow/csv_files/reactive_power_pv_tot.csv', 'w+', encoding="ISO-8859-1", newline='') as csv_file:
+    with open('csv_files/reactive_power_pv_tot.csv', 'w+', encoding="ISO-8859-1", newline='') as csv_file:
         wr = csv.writer(csv_file)
         for row in rows:
             wr.writerow(row)
     csv_file.close()
 
     rows = active_power_ess_tot
-    with open('powerflow/csv_files/active_power_ess_tot.csv', 'w+', encoding="ISO-8859-1", newline='') as csv_file:
+    with open('csv_files/active_power_ess_tot.csv', 'w+', encoding="ISO-8859-1", newline='') as csv_file:
         wr = csv.writer(csv_file)
         for row in rows:
             wr.writerow(row)
     csv_file.close()
 
     rows = load_tot
-    with open('powerflow/csv_files/load_tot.csv', 'w+', encoding="ISO-8859-1", newline='') as csv_file:
+    with open('csv_files/load_tot.csv', 'w+', encoding="ISO-8859-1", newline='') as csv_file:
         wr = csv.writer(csv_file)
         for row in rows:
             wr.writerow(row)
     csv_file.close()
 
     rows = active_nodes_list
-    with open('powerflow/csv_files/active_nodes_list.csv', 'w+', encoding="ISO-8859-1", newline='') as csv_file:
+    with open('csv_files/active_nodes_list.csv', 'w+', encoding="ISO-8859-1", newline='') as csv_file:
         wr = csv.writer(csv_file)
         for row in rows:
             wr.writerow(row)
