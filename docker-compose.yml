@@ -15,10 +15,9 @@ services:
 #     - edgeflex-network
     volumes:
       - .:/powerflow
-    command: bash -c "cd powerflow/ && 
+    command: bash -c "cd powerflow && 
                       make init &&
-                      cd .. &&
-                      python3 /powerflow/runPF.py --ext_port 7070"
+                      python runPF.py --ext_port 7070"
     ports:
       - 7070:8000
       - 1885:1883
